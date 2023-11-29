@@ -17,7 +17,6 @@ services:
   parsedmarc:
     build: ./parsedmarc/
     volumes:
-      - ./files:/input:ro
       - ./output_files:/output
     command: sh -c "crond && parsedmarc --verbose -c /parsedmarc.ini /input/*"
     restart: always
