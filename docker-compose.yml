@@ -17,8 +17,8 @@ services:
   parsedmarc:
     build: ./parsedmarc/
     volumes:
-      - ./output_files:/output
-    command: sh -c "crond && parsedmarc --verbose -c /parsedmarc.ini /input/*"
+      - ./parsedmarc/output_files:/output
+    command: sh -c "crond && parsedmarc --verbose --debug -c /parsedmarc.ini /input/*"
     restart: always
     networks:
       dmarc_visualizer:
