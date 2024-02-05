@@ -1,9 +1,9 @@
-FROM python:3.11-alpine
+FROM python:3.11.7-alpine3.19
 
-RUN apk add --update --no-cache libxml2-dev libxslt-dev
-RUN apk add --update --no-cache --virtual .build_deps build-base libffi-dev \
-    && pip install parsedmarc \
-    && apk del .build_deps
+RUN apk add --no-cache ca-certificates tzdata tini curl jq build-base libffi-dev && \
+    pip install --no-cache-dir parsedmarc && \
+    pip install --no-cache-dir "msgraph-core<1.0.0" --force-reinstall && \
+    apk del --no-cache build-base libffi-dev
 
 COPY parsedmarc.ini /
 
@@ -18,3 +18,4 @@ COPY parsedmarc.ini /
 
 # COPY geoip_update_cron /etc/cron.d/
 # RUN chmod 644 /etc/cron.d/geoip_update_cron
+
