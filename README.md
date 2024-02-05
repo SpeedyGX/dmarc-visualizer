@@ -34,7 +34,7 @@ See the full blog post with the original instructions at [Debricked](https://deb
 ## Instructions
 
 ```shell
-git clone https://github.com/LukeCallaghan/dmarc-visualizer.git
+git clone https://github.com/SpeedyGX/dmarc-visualizer.git
 cd dmarc-visualizer
 docker-compose build
 docker-compose up -d
