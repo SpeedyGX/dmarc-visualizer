@@ -17,14 +17,14 @@ See the full blog post with the original instructions at [Debricked](https://deb
   * Delayed start by waiting for Elasticsearch to report service healthy.
 
 * Grafana
-  * Updated to recent release version - 10.1.5 (Upgrades to 10.2.x are causing errors that are yet to be resolved).
+  * Updated to recent release version - 11.1.0.
   * Uses a docker volume for data persistence.
   * Delayed start by waiting for Elasticsearch to report service healthy.
   * grafana-piechart-panel plugin is deprecated so has been removed and panel converted to the new builtin Piechart.
   * grafana-worldmap-panel plugin is deprecated so has been removed and panel converted to the new builtin Geomap.
 
 * Elasticsearch
-  * Updated to current release version - 8.11.0.
+  * Updated to current release version - 8.14.2.
   * Uses a docker volume for data persistence.
   * Runs health check to report service healthy, forcing other containers to wait until initialised.
 
